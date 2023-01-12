@@ -16,13 +16,13 @@ public class AndroidApp {
 
 
     //Obtain Run URL from Link Provided for Organization
-    static String TG_DEVICE_URL="http://testos.testgrid.io:8057/wd/hub";
+    static String TG_DEVICE_URL="http://xyz.com/wd/hub";
 
     AppiumDriver driver;
 
     //Obtain Capabilities from Link Provided for Organization
     static String TG_DEVICE_NAME="Samsung Galaxy S10";
-    static String TG_DEVICE_UDID="R58M90X176B";
+    static String TG_DEVICE_UDID="";
     static String TG_DEVICE_PLATFORMNAME="Android";
     static String TG_DEVICE_PLATFORMVERSION="12";
 
@@ -39,29 +39,6 @@ public class AndroidApp {
         cap.setCapability("appActivity", APP_ACTIVITY);
         URL url = new URL(TG_DEVICE_URL);
         AppiumDriver<MobileElement> driver = new AppiumDriver<MobileElement>(url, cap);
-
-//    @Test
-//    @org.testng.annotations.Parameters(value = {"device", "version", "platform"})
-//    public void AndroidApp1(String device, String version, String platform) {
-//        try {
-//            DesiredCapabilities capabilities = new DesiredCapabilities();
-//            capabilities.setCapability("build","Java TestNG Android");
-//            capabilities.setCapability("name",platform+" "+device+" "+version);
-//            capabilities.setCapability("deviceName", device);
-//            capabilities.setCapability("platformVersion",version);
-//            capabilities.setCapability("platformName", platform);
-//            capabilities.setCapability("isRealMobile", true);
-//            //AppURL (Create from Wikipedia.apk sample in project)
-//            capabilities.setCapability("app", "APP_URL"); //Enter your app url
-//            capabilities.setCapability("deviceOrientation", "PORTRAIT");
-//            capabilities.setCapability("console", true);
-//            capabilities.setCapability("network", false);
-//            capabilities.setCapability("visual", true);
-//            capabilities.setCapability("devicelog", true);
-//            //capabilities.setCapability("geoLocation", "HK");
-//
-//            String hub = "https://" + userName + ":" + accessKey + gridURL;
-//            driver = new AppiumDriver(new URL(hub), capabilities);
 
         MobileElement color = (MobileElement) driver.findElementById("com.lambdatest.proverbial:id/color");
         //Changes color to pink
